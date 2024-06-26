@@ -1,0 +1,369 @@
+******************************************************************************
+            TI ARM Clang Linker PC v3.2.2                      
+******************************************************************************
+>> Linked Wed Jun 26 23:33:52 2024
+
+OUTPUT FILE NAME:   <IIC_OLED.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00002845
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00020000  000030c0  0001cf40  R  X
+  SRAM                  20200000   00008000  00000200  00007e00  RW X
+  BCR_CONFIG            41c00000   00000080  00000000  00000080  R   
+  BSL_CONFIG            41c00100   00000080  00000000  00000080  R   
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000030c0   000030c0    r-x
+  00000000    00000000    000000c0   000000c0    r-- .intvecs
+  000000c0    000000c0    000027d8   000027d8    r-x .text
+  00002898    00002898    00000828   00000828    r-- .rodata
+20207e00    20207e00    00000200   00000000    rw-
+  20207e00    20207e00    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    000000c0     
+                  00000000    000000c0     startup_mspm0g350x_ticlang.o (.intvecs)
+
+.text      0    000000c0    000027d8     
+                  000000c0    00000ab0     oled.o (.text.OLED_Init)
+                  00000b70    000003dc     oled.o (.text.OLED_ShowSignedNum)
+                  00000f4c    000003c8     oled.o (.text.OLED_ShowNum)
+                  00001314    00000394     oled.o (.text.OLED_ShowHexNum)
+                  000016a8    00000370     oled.o (.text.OLED_ShowBinNum)
+                  00001a18    00000368     oled.o (.text.OLED_ShowChar)
+                  00001d80    000002ac     oled.o (.text.OLED_Fill)
+                  0000202c    00000234     oled.o (.text.OLED_ShowFNum)
+                  00002260    00000138     oled.o (.text.OLED_SetPos)
+                  00002398    0000009c     IIC_OLED.o (.text.main)
+                  00002434    0000008c     libclang_rt.builtins.a : mulsf3.S.obj (.text.__mulsf3)
+                  000024c0    00000062                            : aeabi_fcmp.S.obj (.text.__aeabi_fcmp)
+                  00002522    0000005e     driverlib.a : dl_i2c.o (.text.DL_I2C_fillControllerTXFIFO)
+                  00002580    0000005c     oled.o (.text.OLED_ShowString)
+                  000025dc    00000054     ti_msp_dl_config.o (.text.SYSCFG_DL_I2C_OLED_init)
+                  00002630    00000040     ti_msp_dl_config.o (.text.SYSCFG_DL_SYSCTL_init)
+                  00002670    00000040     libclang_rt.builtins.a : aeabi_uidivmod.S.obj (.text.__aeabi_uidivmod)
+                  000026b0    0000003c                            : comparesf2.S.obj (.text.__gtsf2)
+                  000026ec    0000003a                            : comparesf2.S.obj (.text.__eqsf2)
+                  00002726    00000002     startup_mspm0g350x_ticlang.o (.text.Default_Handler)
+                  00002728    0000003a     libclang_rt.builtins.a : muldsi3.S.obj (.text.__muldsi3)
+                  00002762    00000002                            : aeabi_div0.c.obj (.text.__aeabi_idiv0)
+                  00002764    00000038                            : fixsfsi.S.obj (.text.__fixsfsi)
+                  0000279c    00000034     ti_msp_dl_config.o (.text.SYSCFG_DL_initPower)
+                  000027d0    00000028     libclang_rt.builtins.a : floatunsisf.S.obj (.text.__floatunsisf)
+                  000027f8    00000026     driverlib.a : dl_i2c.o (.text.DL_I2C_setClockConfig)
+                  0000281e    00000002     --HOLE-- [fill = 0]
+                  00002820    00000024     ti_msp_dl_config.o (.text.SYSCFG_DL_GPIO_init)
+                  00002844    00000020     libc.a : boot_cortex_m.c.obj (.text:_c_int00_noinit_noargs)
+                  00002864    00000014     ti_msp_dl_config.o (.text.SYSCFG_DL_init)
+                  00002878    0000000a     driverlib.a : dl_common.o (.text.DL_Common_delayCycles)
+                  00002882    0000000a     oled.o (.text.OLED_CLS)
+                  0000288c    00000004     startup_mspm0g350x_ticlang.o (.text.Reset_Handler)
+                  00002890    00000004     libc.a : pre_init.c.obj (.text._system_pre_init)
+                  00002894    00000004            : exit.c.obj (.text:abort)
+
+.cinit     0    00000000    00000000     
+
+.rodata    0    00002898    00000828     
+                  00002898    000005f0     oled.o (.rodata.F8X16)
+                  00002e88    00000228     oled.o (.rodata.F6x8)
+                  000030b0    0000000e     IIC_OLED.o (.rodata.str1.21583083769037939801)
+                  000030be    00000002     ti_msp_dl_config.o (.rodata.gI2C_OLEDClockConfig)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.binit     0    00000000    00000000     
+
+.stack     0    20207e00    00000200     UNINITIALIZED
+                  20207e00    00000004     libc.a : boot_cortex_m.c.obj (.stack)
+                  20207e04    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20200000    00000000     UNINITIALIZED
+
+__llvm_prf_bits 
+*          0    20200000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code    ro data   rw data
+       ------                         ----    -------   -------
+    .\
+       ti_msp_dl_config.o             256     2         0      
+       startup_mspm0g350x_ticlang.o   6       192       0      
+       IIC_OLED.o                     156     14        0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         418     208       0      
+                                                               
+    .\oled\
+       oled.o                         9022    2072      0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         9022    2072      0      
+                                                               
+    D:/CCSTheia/mspm0_sdk_2_01_00_03/source/ti/driverlib/lib/ticlang/m0p/mspm0g1x0x_g3x0x/driverlib.a
+       dl_i2c.o                       132     0         0      
+       dl_common.o                    10      0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         142     0         0      
+                                                               
+    D:\CCSTheia\ccs\tools\compiler\ti-cgt-armllvm_3.2.2.LTS\lib\armv6m-ti-none-eabi/c/libc.a
+       boot_cortex_m.c.obj            32      0         0      
+       exit.c.obj                     4       0         0      
+       pre_init.c.obj                 4       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         40      0         0      
+                                                               
+    D:\CCSTheia\ccs\tools\compiler\ti-cgt-armllvm_3.2.2.LTS\lib\clang/15.0.7/lib/armv6m-ti-none-eabi/libclang_rt.builtins.a
+       mulsf3.S.obj                   140     0         0      
+       comparesf2.S.obj               118     0         0      
+       aeabi_fcmp.S.obj               98      0         0      
+       aeabi_uidivmod.S.obj           64      0         0      
+       muldsi3.S.obj                  58      0         0      
+       fixsfsi.S.obj                  56      0         0      
+       floatunsisf.S.obj              40      0         0      
+       aeabi_div0.c.obj               2       0         0      
+    +--+------------------------------+-------+---------+---------+
+       Total:                         576     0         0      
+                                                               
+       Stack:                         0       0         512    
+    +--+------------------------------+-------+---------+---------+
+       Grand Total:                   10198   2280      512    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                       
+-------   ----                       
+00002727  ADC0_IRQHandler            
+00002727  ADC1_IRQHandler            
+00002727  AES_IRQHandler             
+00002894  C$$EXIT                    
+00002727  CANFD0_IRQHandler          
+00002727  DAC0_IRQHandler            
+00002879  DL_Common_delayCycles      
+00002523  DL_I2C_fillControllerTXFIFO
+000027f9  DL_I2C_setClockConfig      
+00002727  DMA_IRQHandler             
+00002727  Default_Handler            
+00002e88  F6x8                       
+00002898  F8X16                      
+00002727  GROUP0_IRQHandler          
+00002727  GROUP1_IRQHandler          
+00002727  HardFault_Handler          
+00002727  I2C0_IRQHandler            
+00002727  I2C1_IRQHandler            
+00002727  NMI_Handler                
+00002883  OLED_CLS                   
+00001d81  OLED_Fill                  
+000000c1  OLED_Init                  
+00002261  OLED_SetPos                
+000016a9  OLED_ShowBinNum            
+00001a19  OLED_ShowChar              
+0000202d  OLED_ShowFNum              
+00001315  OLED_ShowHexNum            
+00000f4d  OLED_ShowNum               
+00000b71  OLED_ShowSignedNum         
+00002581  OLED_ShowString            
+00002727  PendSV_Handler             
+00002727  RTC_IRQHandler             
+0000288d  Reset_Handler              
+00002727  SPI0_IRQHandler            
+00002727  SPI1_IRQHandler            
+00002727  SVC_Handler                
+00002821  SYSCFG_DL_GPIO_init        
+000025dd  SYSCFG_DL_I2C_OLED_init    
+00002631  SYSCFG_DL_SYSCTL_init      
+00002865  SYSCFG_DL_init             
+0000279d  SYSCFG_DL_initPower        
+00002727  SysTick_Handler            
+00002727  TIMA0_IRQHandler           
+00002727  TIMA1_IRQHandler           
+00002727  TIMG0_IRQHandler           
+00002727  TIMG12_IRQHandler          
+00002727  TIMG6_IRQHandler           
+00002727  TIMG7_IRQHandler           
+00002727  TIMG8_IRQHandler           
+00002727  UART0_IRQHandler           
+00002727  UART1_IRQHandler           
+00002727  UART2_IRQHandler           
+00002727  UART3_IRQHandler           
+20208000  __STACK_END                
+00000200  __STACK_SIZE               
+00000000  __TI_ATRegion0_region_sz   
+00000000  __TI_ATRegion0_src_addr    
+00000000  __TI_ATRegion0_trg_addr    
+00000000  __TI_ATRegion1_region_sz   
+00000000  __TI_ATRegion1_src_addr    
+00000000  __TI_ATRegion1_trg_addr    
+00000000  __TI_ATRegion2_region_sz   
+00000000  __TI_ATRegion2_src_addr    
+00000000  __TI_ATRegion2_trg_addr    
+00000000  __TI_CINIT_Base            
+00000000  __TI_CINIT_Limit           
+00000000  __TI_CINIT_Warm            
+ffffffff  __TI_pprof_out_hndl        
+ffffffff  __TI_prof_data_size        
+ffffffff  __TI_prof_data_start       
+00000000  __TI_static_base__         
+00002765  __aeabi_f2iz               
+000024c1  __aeabi_fcmpeq             
+000024fd  __aeabi_fcmpge             
+00002511  __aeabi_fcmpgt             
+000024e9  __aeabi_fcmple             
+000024d5  __aeabi_fcmplt             
+00002435  __aeabi_fmul               
+00002763  __aeabi_idiv0              
+000027d1  __aeabi_ui2f               
+00002671  __aeabi_uidiv              
+00002671  __aeabi_uidivmod           
+ffffffff  __binit__                  
+000026ed  __cmpsf2                   
+000026ed  __eqsf2                    
+00002765  __fixsfsi                  
+000027d1  __floatunsisf              
+000026b1  __gesf2                    
+000026b1  __gtsf2                    
+000026ed  __lesf2                    
+000026ed  __ltsf2                    
+UNDEFED   __mpu_init                 
+00002729  __muldsi3                  
+00002435  __mulsf3                   
+000026ed  __nesf2                    
+20207e00  __stack                    
+20200000  __start___llvm_prf_bits    
+20200000  __start___llvm_prf_cnts    
+20200000  __stop___llvm_prf_bits     
+20200000  __stop___llvm_prf_cnts     
+00002845  _c_int00_noinit_noargs     
+00002891  _system_pre_init           
+00002895  abort                      
+ffffffff  binit                      
+00000000  interruptVectors           
+00002399  main                       
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                       
+-------   ----                       
+00000000  __TI_ATRegion0_region_sz   
+00000000  __TI_ATRegion0_src_addr    
+00000000  __TI_ATRegion0_trg_addr    
+00000000  __TI_ATRegion1_region_sz   
+00000000  __TI_ATRegion1_src_addr    
+00000000  __TI_ATRegion1_trg_addr    
+00000000  __TI_ATRegion2_region_sz   
+00000000  __TI_ATRegion2_src_addr    
+00000000  __TI_ATRegion2_trg_addr    
+00000000  __TI_CINIT_Base            
+00000000  __TI_CINIT_Limit           
+00000000  __TI_CINIT_Warm            
+00000000  __TI_static_base__         
+00000000  interruptVectors           
+000000c1  OLED_Init                  
+00000200  __STACK_SIZE               
+00000b71  OLED_ShowSignedNum         
+00000f4d  OLED_ShowNum               
+00001315  OLED_ShowHexNum            
+000016a9  OLED_ShowBinNum            
+00001a19  OLED_ShowChar              
+00001d81  OLED_Fill                  
+0000202d  OLED_ShowFNum              
+00002261  OLED_SetPos                
+00002399  main                       
+00002435  __aeabi_fmul               
+00002435  __mulsf3                   
+000024c1  __aeabi_fcmpeq             
+000024d5  __aeabi_fcmplt             
+000024e9  __aeabi_fcmple             
+000024fd  __aeabi_fcmpge             
+00002511  __aeabi_fcmpgt             
+00002523  DL_I2C_fillControllerTXFIFO
+00002581  OLED_ShowString            
+000025dd  SYSCFG_DL_I2C_OLED_init    
+00002631  SYSCFG_DL_SYSCTL_init      
+00002671  __aeabi_uidiv              
+00002671  __aeabi_uidivmod           
+000026b1  __gesf2                    
+000026b1  __gtsf2                    
+000026ed  __cmpsf2                   
+000026ed  __eqsf2                    
+000026ed  __lesf2                    
+000026ed  __ltsf2                    
+000026ed  __nesf2                    
+00002727  ADC0_IRQHandler            
+00002727  ADC1_IRQHandler            
+00002727  AES_IRQHandler             
+00002727  CANFD0_IRQHandler          
+00002727  DAC0_IRQHandler            
+00002727  DMA_IRQHandler             
+00002727  Default_Handler            
+00002727  GROUP0_IRQHandler          
+00002727  GROUP1_IRQHandler          
+00002727  HardFault_Handler          
+00002727  I2C0_IRQHandler            
+00002727  I2C1_IRQHandler            
+00002727  NMI_Handler                
+00002727  PendSV_Handler             
+00002727  RTC_IRQHandler             
+00002727  SPI0_IRQHandler            
+00002727  SPI1_IRQHandler            
+00002727  SVC_Handler                
+00002727  SysTick_Handler            
+00002727  TIMA0_IRQHandler           
+00002727  TIMA1_IRQHandler           
+00002727  TIMG0_IRQHandler           
+00002727  TIMG12_IRQHandler          
+00002727  TIMG6_IRQHandler           
+00002727  TIMG7_IRQHandler           
+00002727  TIMG8_IRQHandler           
+00002727  UART0_IRQHandler           
+00002727  UART1_IRQHandler           
+00002727  UART2_IRQHandler           
+00002727  UART3_IRQHandler           
+00002729  __muldsi3                  
+00002763  __aeabi_idiv0              
+00002765  __aeabi_f2iz               
+00002765  __fixsfsi                  
+0000279d  SYSCFG_DL_initPower        
+000027d1  __aeabi_ui2f               
+000027d1  __floatunsisf              
+000027f9  DL_I2C_setClockConfig      
+00002821  SYSCFG_DL_GPIO_init        
+00002845  _c_int00_noinit_noargs     
+00002865  SYSCFG_DL_init             
+00002879  DL_Common_delayCycles      
+00002883  OLED_CLS                   
+0000288d  Reset_Handler              
+00002891  _system_pre_init           
+00002894  C$$EXIT                    
+00002895  abort                      
+00002898  F8X16                      
+00002e88  F6x8                       
+20200000  __start___llvm_prf_bits    
+20200000  __start___llvm_prf_cnts    
+20200000  __stop___llvm_prf_bits     
+20200000  __stop___llvm_prf_cnts     
+20207e00  __stack                    
+20208000  __STACK_END                
+ffffffff  __TI_pprof_out_hndl        
+ffffffff  __TI_prof_data_size        
+ffffffff  __TI_prof_data_start       
+ffffffff  __binit__                  
+ffffffff  binit                      
+UNDEFED   __mpu_init                 
+
+[106 symbols]
