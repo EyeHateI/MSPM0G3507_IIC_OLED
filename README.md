@@ -6,3 +6,4 @@
 部分代码参考CSDN以及江科大OLED驱动代码
 
 环境：CCS Theia
+在driver_lib的example例程下更改的，具体引脚配置在syscfg里面
